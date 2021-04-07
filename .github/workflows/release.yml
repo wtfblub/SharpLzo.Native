@@ -1,0 +1,23 @@
+name: Release
+
+on: workflow_dispatch
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build LZO
+        run: |
+          chmod +x build.sh
+          ./build.sh
+          dotnet pack -c Release
+
+      - name: Build package
+        run: |
+          dotnet pack -c Release
+
+      - name: Push package
+        run: |
+          find src/SharpLzo.Native/bin/Release -name '*.nupkg' | xargs -i dotnet nuget push {} -k ${{ secrets.NUGET_API_KEY }} -s https://www.myget.org/F/wtfblub/api/v2/package

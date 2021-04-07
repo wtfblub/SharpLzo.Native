@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>SharpLzo.Native</id>
+    <title>SharpLzo.Native</title>
+    <version>2.10.0</version>
+    <authors>wtfblub</authors>
+    <copyright>Copyright (C) Markus F.X.J. Oberhumer</copyright>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">GPL-2.0-only</license>
+    <repository type="git" url="https://github.com/wtfblub/SharpLzo.Native" />
+    <description>This is the native lzo library by Markus F.X.J. Oberhumer compiled for use with SharpLzo.</description>
+  </metadata>
+  <files>
+    <file src="$SolutionDir$runtimes\win-x86\native\liblzo2.dll" target="runtimes\win-x86\native\liblzo2.dll" />
+    <file src="$SolutionDir$runtimes\win-x64\native\liblzo2.dll" target="runtimes\win-x64\native\liblzo2.dll" />
+    <file src="$SolutionDir$runtimes\linux-x64\native\liblzo2.so" target="runtimes\linux-x64\native\liblzo2.so" />
+    <file src="$SolutionDir$runtimes\linux-arm\native\liblzo2.so" target="runtimes\linux-arm\native\liblzo2.so" />
+    <file src="$SolutionDir$runtimes\linux-arm64\native\liblzo2.so" target="runtimes\linux-arm64\native\liblzo2.so" />
+  </files>
+</package>
